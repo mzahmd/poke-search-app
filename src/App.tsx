@@ -16,9 +16,12 @@ function App() {
 
   function handleClick() {
     fetch(`https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/${searchValue.current?.value.toLowerCase()}`)
-      .then((data) => data.json())
+      .then((data) => {return data.json()})
       .then((pokemon) => {
         setIsPokemon(pokemon)
+      }).catch((error) => {
+        alert("Eingabe ungültig")
+        console.log(error)
       })
   }
 
