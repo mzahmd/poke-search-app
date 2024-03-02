@@ -16,24 +16,23 @@ function App() {
       .then((data) => data.json())
       .then((pokemon) => {
         setIsPokemon(pokemon)
-        console.log(isPokemon);
       })
   }
 
   return (
     <>
       <Box display={"flex"} alignItems={"center"} justifyContent={"center"} flexDirection={"column"} sx={{ paddingTop: "1rem" }}>
-        <h1>Pokémon Search App</h1>
+        <Typography variant="h4" sx={{ marginBottom: "1rem" }}>Pokémon Search App</Typography>
         <Card>
-          <CardHeader action={
+          <CardHeader sx={{ display: "flex", justifyContent: "start" }} title={
             <>
               <Typography>Search for Pokémon Name or ID:</Typography>
-              <TextField id="outlined-search" type="search" inputRef={searchValue} />
+              <TextField id="outlined-search" type="search" inputRef={searchValue} size='small' sx={{ padding: "none", margin: "none" }} />
               <Button variant="contained" sx={{ marginLeft: "10px" }} onClick={handleClick}>search</Button>
             </>
           }>
           </CardHeader>
-          <CardContent sx={{ minHeight: "20rem",width:"30rem" , backgroundImage: "radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%)" }}>
+          <CardContent sx={{ minHeight: "30rem", width: "30rem", backgroundImage: "radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%)" }}>
             {isPokemon &&
               <>
                 <Typography>{isPokemon.name.toUpperCase()} #{isPokemon.id}</Typography>
