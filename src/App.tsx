@@ -16,7 +16,7 @@ function App() {
 
   function handleClick() {
     fetch(`https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/${searchValue.current?.value.toLowerCase()}`)
-      .then((data) => {return data.json()})
+      .then((data) => data.json())
       .then((pokemon) => {
         setIsPokemon(pokemon)
       }).catch((error) => {
@@ -48,28 +48,52 @@ function App() {
                     <Typography sx={{ backgroundColor: pokeTypes[type.name], fontSize: "1rem", borderRadius: "5px", width: "fit-content", padding: "5px", marginRight: "5px" }}>{type.name}</Typography>
                   )}
                 </Box>
-                <Grid container spacing={1} sx={{ textAlign: "center", marginTop: "1rem" }}>
-                  <Grid item xs={8}>
-                    <Typography sx={{ backgroundColor: "lightgray", padding: "5px" }}>Base</Typography>
-                  </Grid>
-                  <Grid item xs={4}>
-                    <Typography sx={{ backgroundColor: "lightgray", padding: "5px" }}>Stats</Typography>
-                  </Grid>
-                  {isPokemon.stats.map(stats => {
-                    return (
-                      <>
-                        <Grid item xs={8}>
-                          <Typography sx={{ backgroundColor: "lightgray", padding: "5px" }}>{stats.stat.name}:</Typography>
-                        </Grid>
-                        <Grid item xs={4}>
-                          <Typography sx={{ backgroundColor: "lightgray", padding: "5px" }}>{stats.base_stat}</Typography>
-                        </Grid>
-                      </>
-                    )
-                  })}
-                </Grid>
               </>
             }
+            <Grid container spacing={1} sx={{ textAlign: "center", marginTop: "1rem" }}>
+              <Grid item xs={8}>
+                <Typography sx={{ backgroundColor: "lightgray", padding: "5px" }}>Base</Typography>
+              </Grid>
+              <Grid item xs={4}>
+                <Typography sx={{ backgroundColor: "lightgray", padding: "5px" }}>Stats</Typography>
+              </Grid>
+              <Grid item xs={8}>
+                <Typography sx={{ backgroundColor: "lightgray", padding: "5px" }}>HP:</Typography>
+              </Grid>
+              <Grid item xs={4}>
+                <Typography sx={{ backgroundColor: "lightgray", padding: "5px" }}>{isPokemon?.stats[0].base_stat || "0"}</Typography>
+              </Grid>
+              <Grid item xs={8}>
+                <Typography sx={{ backgroundColor: "lightgray", padding: "5px" }}>Attack:</Typography>
+              </Grid>
+              <Grid item xs={4}>
+                <Typography sx={{ backgroundColor: "lightgray", padding: "5px" }}>{isPokemon?.stats[1].base_stat || "0"}</Typography>
+              </Grid>
+              <Grid item xs={8}>
+                <Typography sx={{ backgroundColor: "lightgray", padding: "5px" }}>Defense:</Typography>
+              </Grid>
+              <Grid item xs={4}>
+                <Typography sx={{ backgroundColor: "lightgray", padding: "5px" }}>{isPokemon?.stats[2].base_stat || "0"}</Typography>
+              </Grid>
+              <Grid item xs={8}>
+                <Typography sx={{ backgroundColor: "lightgray", padding: "5px" }}>Sp. Attack:</Typography>
+              </Grid>
+              <Grid item xs={4}>
+                <Typography sx={{ backgroundColor: "lightgray", padding: "5px" }}>{isPokemon?.stats[3].base_stat || "0"}</Typography>
+              </Grid>
+              <Grid item xs={8}>
+                <Typography sx={{ backgroundColor: "lightgray", padding: "5px" }}>Sp. Defense:</Typography>
+              </Grid>
+              <Grid item xs={4}>
+                <Typography sx={{ backgroundColor: "lightgray", padding: "5px" }}>{isPokemon?.stats[4].base_stat || "0"}</Typography>
+              </Grid>
+              <Grid item xs={8}>
+                <Typography sx={{ backgroundColor: "lightgray", padding: "5px" }}>Speed:</Typography>
+              </Grid>
+              <Grid item xs={4}>
+                <Typography sx={{ backgroundColor: "lightgray", padding: "5px" }}>{isPokemon?.stats[5].base_stat || "0"}</Typography>
+              </Grid>
+            </Grid>
           </CardContent>
         </Card>
       </Box>
