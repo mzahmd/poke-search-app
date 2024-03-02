@@ -24,7 +24,10 @@ function App() {
           <CardContent>
             <Typography>Pikachu #25</Typography>
             <CardMedia sx={{ height: 150, width: 150 }} image="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" title="Poke" />
-
+            <Box display={"flex"} alignItems={"center"} flexDirection={"row"}>
+              <Typography sx={{backgroundColor:"yellow", fontSize:"1rem", borderRadius:"5px", width:"fit-content", padding:"5px", marginRight:"5px"}}>ELECTRIC</Typography>
+              <Typography sx={{backgroundColor:"red", fontSize:"1rem", borderRadius:"5px", width:"fit-content", padding:"5px", marginRight:"5px"}}>FIRE</Typography>
+            </Box>
           </CardContent>
         </Card>
       </Box>
