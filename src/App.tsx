@@ -1,5 +1,8 @@
 import { Card, CardHeader, CardContent, CardMedia, TextField, Typography, Button, Box, Grid } from '@mui/material';
+import { pokeTypes } from "./data/types"
+
 import { useRef, useState } from 'react';
+
 interface IPokemon {
   id: number,
   name: string
@@ -39,7 +42,7 @@ function App() {
                 <CardMedia sx={{ height: 150, width: 150 }} image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${isPokemon.id}.png`} title="poke" />
                 <Box display={"flex"} alignItems={"center"} flexDirection={"row"}>
                   {isPokemon?.types.map(({ type }) =>
-                    <Typography sx={{ backgroundColor: "red", fontSize: "1rem", borderRadius: "5px", width: "fit-content", padding: "5px", marginRight: "5px" }}>{type.name}</Typography>
+                    <Typography sx={{ backgroundColor: pokeTypes[type.name], fontSize: "1rem", borderRadius: "5px", width: "fit-content", padding: "5px", marginRight: "5px" }}>{type.name}</Typography>
                   )}
                 </Box>
                 <Grid container spacing={1} sx={{ textAlign: "center", marginTop: "1rem" }}>
