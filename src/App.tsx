@@ -30,7 +30,7 @@ function App() {
       <Box display={"flex"} alignItems={"center"} justifyContent={"center"} flexDirection={"column"} sx={{ paddingTop: "1rem" }}>
         <Typography variant="h4" sx={{ marginBottom: "1rem" }}>Pokémon Search App</Typography>
         <Card>
-          <CardHeader sx={{ display: "flex", justifyContent: "start" }} title={
+          <CardHeader title={
             <>
               <Typography>Search for Pokémon Name or ID:</Typography>
               <TextField id="outlined-search" type="search" inputRef={searchValue} size='small' sx={{ padding: "none", margin: "none" }} />
@@ -38,11 +38,14 @@ function App() {
             </>
           }>
           </CardHeader>
-          <CardContent sx={{ minHeight: "30rem", width: "30rem", backgroundImage: "radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%)" }}>
+          <CardContent sx={{ minHeight: "30rem", width: "100%", backgroundImage: "radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%)" }}>
             {isPokemon &&
               <>
                 <Typography>{isPokemon.name.toUpperCase()} #{isPokemon.id}</Typography>
-                <CardMedia sx={{ height: 150, width: 150 }} image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${isPokemon.id}.png`} title="poke" />
+                <Box display={"flex"} justifyContent={"center"}>
+                  <CardMedia sx={{ height: 150, width: 150 }} image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${isPokemon.id}.png`} title="poke" />
+                  <CardMedia sx={{ height: 150, width: 150 }} image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${isPokemon.id}.png`} title="poke" />
+                </Box>
                 <Box display={"flex"} alignItems={"center"} flexDirection={"row"}>
                   {isPokemon?.types.map(({ type }) =>
                     <Typography sx={{ backgroundColor: pokeTypes[type.name], fontSize: "1rem", borderRadius: "5px", width: "fit-content", padding: "5px", marginRight: "5px" }}>{type.name}</Typography>

@@ -1,4 +1,8 @@
-export const pokeTypes = {
+type typePokeTypes = {
+	[key: string]: string
+}
+
+export const pokeTypes: typePokeTypes = {
   normal: "#A8A77A",
   fire: "#EE8130",
   water: "#6390F0",
