@@ -1,30 +1,24 @@
-# React + TypeScript + Vite
+## 🔎  Pokémon Search App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the Pokemon Search App! This application is designed to help you easily search for information about your favorite Pokemon.
 
-Currently, two official plugins are available:
+Inspired by FreeCodeCamp [https://pokemon-search-app.freecodecamp.rocks/](https://pokemon-search-app.freecodecamp.rocks/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 💡 App Description
 
-## Expanding the ESLint configuration
+Project: [https://github.com/mzahmd/poke-search-app](https://github.com/mzahmd/poke-search-app)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Live: [https://poke-search-app-omega.vercel.app/](https://poke-search-app-omega.vercel.app/)
 
-- Configure the top-level `parserOptions` property like this:
+API: [https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/](https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+With the Pokémon search app, you always have all the information about your favorite Pokémon at your fingertips. Whether you know their name or just their number, you can get detailed information on their types, abilities and stats with just one click.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## 🚦 Running the Project
+
+To run the project in your local environment, follow these steps:
+
+1. Clone the repository to your local machine.
+2. Run `npm install` in the project directory to install the required dependencies.
+3. Run `npm run dev` to get the project started.
+4. Open [http://localhost:5173](http://localhost:5173) (or the address shown in your console) in your web browser to view the app.
